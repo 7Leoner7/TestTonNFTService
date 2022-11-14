@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "Личный кабинет";
+}
+@model PersonAreaViewModel
+@using TonSdk
+
+<div id="auth_block" align="center" style="display: block; position: fixed; z-index: 9999; background-color: rgba(240, 240, 240, 0.6); width: 100%; height: 100%; justify-content:center; align-items:center; display: flex;"> </div>
+<script src="../js/auth.js"></script>
+<div id="zoom" style="display: none; position: fixed; z-index: 100; width: 100%; height: 100%;">
+    <table style="background-color: rgba(10, 10, 10, 0.6); width: 100%; height: 100%;">
+        <tbody>
+            <tr>
+                <td align="center" style=" width: 250px; height: 250px;">
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <img id="prevImg" src="" style="width: inherit; height: inherit; border-style: groove; border-color: rgba(255, 255, 255, 0.5);" draggable="false" loading="lazy">
+                </td>
+                <td align="center" style=" width: 250px; height: 250px;">
+                </td>
+                <td align="center" style=" width: 250px; height: 250px;">
+                    <div id="zoomImage">
+                    </div>
+                </td>
+                <td align="center" style=" width: 250px; height: 250px;">
+                    <div style="width:inherit">
+                        <div style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">Создатель: <u><span id="author" style="word-break:break-all"></span></u></div>
+                        <br />
+                        <div style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">Владелец: <u><span id="owner" style="word-break:break-all"></span></u></div>
+                        <br />
+                        <div style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">Стоимость: <span id="cost"></span> WCOIN</div>
+                        @{
+                            if (!Model.IsOwner)
+                            {
+                                <button class="buttonscript button" id="buy">
+                                    Купить
+                                </button>
+                                <br>
+                                <br>
+                                <button class="buttonscript button" id="report">
+                                    Report
+                                </button>
+                            }
+                        }
+
+                    </div>
+                </td>
+                <td align="center" style=" width: 250px; height: 250px;">
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <img id="nextImg" src="" style="width: inherit; height: inherit; border-style: groove; border-color: rgba(255, 255, 255, 0.5);" draggable="false" loading="lazy">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div id="addCollection" align="center" style="display: none; background-color: rgba(10, 10, 10, 0.6); position: fixed; z-index: 200; width: 100%; height: 100%;">
+    <form id="CollectNFT"></form>
+    <div align="center" style="overflow-y:scroll; background-color: rgb(200, 200, 200); width: 800px; height:400px; margin-top: 200px; margin-bottom: 200px; padding-bottom: 50px; border-style: groove; border-color: rgba(127, 127, 127, 1.0); border-radius: 1%;">
+        <svg id="close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin-left: 90%; cursor: pointer; margin-top: 1%;" width="50px" height="50px">
+            <path d="M 5,5 l 45,45 M 50,5 l -45,45" stroke="black" stroke-width="4" />
+        </svg>
+        <br>
+        <div id="visNFT">
+            <div id="nft0">
+                <input alt="0" id="url0" form="CollectNFT" type="url" placeholder="Ссылка на фото..." style="font-size: 16px; width: 480px; margin-bottom: 2%;" value="" />
+                <br />
+                <img alt="0" id="img0" src="" style="max-height:250px; max-width:500px" />
+                <br>
+                <input type="checkbox" id="isSelling" style="font-size: 16px; margin-bottom: 2%;" /><u> NFT продаётся?</u>
+                <br />
+                <input type="number" id="cost" placeholder="Укажите цену..." style="font-size: 16px; width: 412px;" value="" min="0" />
+                <br>
+                <br />
+                <textarea id="descript" style="resize: none; font-size: 16px; margin-bottom: 2%;" name="text" cols="52" rows="7" maxlength="256" placeholder="Введите описание коллекции или фото"></textarea>
+                <br>
+            </div>
+            <div id="nft1"></div>
+        </div>
+        <button id="addNFT" class="buttonscript buttonPA" style="margin-bottom: 2%;">Добавить фото</button>
+        <br>
+        <input id="sendCollect" form="CollectNFT" type="button" class="buttonscript buttonPA" style="margin-bottom: 2%; width: 300px;" value="Отправить коллекцию на обработку" />
+    </div>
+
+</div>
+<section>
+    <table align="center" style="border-style: solid; border-color: black; background-color: rgba(10, 10, 10, 0.6); width: 100%; height: auto;">
+        <tr style="background: rgba(10, 10, 10, 0.5); border-style: solid; border-color: rgba(255, 255, 255, 0.5);">
+            <td align="center" style="background: rgba(10, 10, 10, 0.5); border-style: solid; border-color: rgba(255, 255, 255, 0.5); width: 250px; height: 250px;">
+                <span id="addr" style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">Адрес клиента: </span><br />
+                <span id="pub_key"  style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">Публичный ключ: </span><br />
+                <span id="sec_key" style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">Секретный ключ: </span><br />
+            </td>
+            <!-- <td align="right" style="background: rgba(10, 10, 10, 0.5)">
+                <p><font size="10" color="white">Баланс...<font></p>
+            </td> -->
+        </tr>
+    </table>
+    <table align="center" style="border-style: solid; border-color: black; background-color: rgba(10, 10, 10, 0.6); width: 65%;">
+        @if (Model.IsOwner)
+        {
+            <tr>
+                <td align="left">
+                    <input class="buttonPA" type="button" value="Добавить коллекцию" onclick="document.getElementById('addCollection').style.display = 'block';" />
+                </td>
+            </tr>
+        }
+
+        @for (int i = 0; i < Model.ListOfCollections.Count; i++)
+        {
+            string s = Model.ListOfCollections[i].ToJson().ToString();
+            <tr>
+                <td align="center" style="background: rgba(10, 10, 10, 0.5); border-style: solid; border-color: rgba(255, 255, 255, 0.5); width: 250px; height: 250px;">
+                    <img alt="@s" id="point" align="left" src="@Model.ListOfCollections[i].CollNFT[0].PathNFT" style="width: inherit; height: inherit;" draggable="false" loading="lazy" />
+                </td>
+                <td align="center" style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">
+                    Описание коллекции: <u>@Model.ListOfCollections[i].CollNFT[0].description</u>
+                </td>
+            </tr>
+        }
+    </table>
+</section>
+<script src="../js/JSONLoaderFromForm.js"></script>
+<script src="../js/zoomPlus.js"></script>
+

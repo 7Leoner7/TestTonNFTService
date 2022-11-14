@@ -1,0 +1,68 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "CreateClient",
+			"inputs": [
+				{"name":"addr","type":"address"},
+				{"name":"likesNFT","type":"string"}
+			],
+			"outputs": [
+				{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"client","type":"tuple"}
+			]
+		},
+		{
+			"name": "GetClient",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"client","type":"tuple"}
+			]
+		},
+		{
+			"name": "SetClient",
+			"inputs": [
+				{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"client","type":"tuple"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "GetBalance",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"bal","type":"uint128"}
+			]
+		},
+		{
+			"name": "sendTransaction",
+			"inputs": [
+				{"name":"dest","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"}
+			],
+			"outputs": [
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"_client","type":"tuple"}
+	]
+}

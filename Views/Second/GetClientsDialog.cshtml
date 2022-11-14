@@ -1,0 +1,14 @@
+﻿@{
+    Layout = "";
+}
+@model ContactModel
+
+@{      
+    string combineS = "";
+    if(Model.messages!=null)
+    foreach(var s in Model.messages)
+    {
+        combineS += s + "\\";
+    }
+}
+@combineS

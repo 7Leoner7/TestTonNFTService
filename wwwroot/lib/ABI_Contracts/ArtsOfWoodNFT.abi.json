@@ -1,0 +1,110 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "IsAuth",
+			"inputs": [
+				{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"own","type":"tuple"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "AddUser",
+			"inputs": [
+				{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"own","type":"tuple"},
+				{"name":"bal","type":"uint128"}
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "sendTransaction",
+			"inputs": [
+				{"name":"dest","type":"address"},
+				{"name":"value","type":"uint128"},
+				{"name":"bounce","type":"bool"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "TransactionNFT",
+			"inputs": [
+				{"components":[{"name":"IdColl","type":"uint128"},{"name":"idNFT","type":"uint128"},{"name":"addrNFT","type":"address"},{"name":"PathNFT","type":"string"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Owner","type":"tuple"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creater","type":"tuple"},{"name":"description","type":"string"},{"name":"pay_able","type":"bool"},{"name":"cost","type":"uint128"},{"name":"IsOriginal","type":"bool"},{"components":[{"name":"ColorSum","type":"uint128"},{"name":"deltaColor","type":"uint128"},{"name":"decomposition","type":"string"}],"name":"det","type":"tuple"}],"name":"nft","type":"tuple"},
+				{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"buyer","type":"tuple"}
+			],
+			"outputs": [
+				{"name":"value","type":"bool"}
+			]
+		},
+		{
+			"name": "CreateNFT",
+			"inputs": [
+				{"components":[{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creator","type":"tuple"},{"components":[{"name":"IdColl","type":"uint128"},{"name":"idNFT","type":"uint128"},{"name":"addrNFT","type":"address"},{"name":"PathNFT","type":"string"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Owner","type":"tuple"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creater","type":"tuple"},{"name":"description","type":"string"},{"name":"pay_able","type":"bool"},{"name":"cost","type":"uint128"},{"name":"IsOriginal","type":"bool"},{"components":[{"name":"ColorSum","type":"uint128"},{"name":"deltaColor","type":"uint128"},{"name":"decomposition","type":"string"}],"name":"det","type":"tuple"}],"name":"CollNFT","type":"tuple[]"},{"name":"IdColl","type":"uint128"}],"name":"ListNFT","type":"tuple"}
+			],
+			"outputs": [
+				{"components":[{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creator","type":"tuple"},{"components":[{"name":"IdColl","type":"uint128"},{"name":"idNFT","type":"uint128"},{"name":"addrNFT","type":"address"},{"name":"PathNFT","type":"string"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Owner","type":"tuple"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creater","type":"tuple"},{"name":"description","type":"string"},{"name":"pay_able","type":"bool"},{"name":"cost","type":"uint128"},{"name":"IsOriginal","type":"bool"},{"components":[{"name":"ColorSum","type":"uint128"},{"name":"deltaColor","type":"uint128"},{"name":"decomposition","type":"string"}],"name":"det","type":"tuple"}],"name":"CollNFT","type":"tuple[]"},{"name":"IdColl","type":"uint128"}],"name":"value","type":"tuple"}
+			]
+		},
+		{
+			"name": "GetCollNFT",
+			"inputs": [
+				{"name":"id","type":"uint128"}
+			],
+			"outputs": [
+				{"components":[{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creator","type":"tuple"},{"components":[{"name":"IdColl","type":"uint128"},{"name":"idNFT","type":"uint128"},{"name":"addrNFT","type":"address"},{"name":"PathNFT","type":"string"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Owner","type":"tuple"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creater","type":"tuple"},{"name":"description","type":"string"},{"name":"pay_able","type":"bool"},{"name":"cost","type":"uint128"},{"name":"IsOriginal","type":"bool"},{"components":[{"name":"ColorSum","type":"uint128"},{"name":"deltaColor","type":"uint128"},{"name":"decomposition","type":"string"}],"name":"det","type":"tuple"}],"name":"CollNFT","type":"tuple[]"},{"name":"IdColl","type":"uint128"}],"name":"value","type":"tuple"}
+			]
+		},
+		{
+			"name": "GetNFT",
+			"inputs": [
+				{"name":"CollId","type":"uint128"},
+				{"name":"id","type":"uint128"}
+			],
+			"outputs": [
+				{"components":[{"name":"IdColl","type":"uint128"},{"name":"idNFT","type":"uint128"},{"name":"addrNFT","type":"address"},{"name":"PathNFT","type":"string"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Owner","type":"tuple"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creater","type":"tuple"},{"name":"description","type":"string"},{"name":"pay_able","type":"bool"},{"name":"cost","type":"uint128"},{"name":"IsOriginal","type":"bool"},{"components":[{"name":"ColorSum","type":"uint128"},{"name":"deltaColor","type":"uint128"},{"name":"decomposition","type":"string"}],"name":"det","type":"tuple"}],"name":"value","type":"tuple"}
+			]
+		},
+		{
+			"name": "GetOwnerCollNFT",
+			"inputs": [
+				{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"owner","type":"tuple"}
+			],
+			"outputs": [
+				{"components":[{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creator","type":"tuple"},{"components":[{"name":"IdColl","type":"uint128"},{"name":"idNFT","type":"uint128"},{"name":"addrNFT","type":"address"},{"name":"PathNFT","type":"string"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Owner","type":"tuple"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creater","type":"tuple"},{"name":"description","type":"string"},{"name":"pay_able","type":"bool"},{"name":"cost","type":"uint128"},{"name":"IsOriginal","type":"bool"},{"components":[{"name":"ColorSum","type":"uint128"},{"name":"deltaColor","type":"uint128"},{"name":"decomposition","type":"string"}],"name":"det","type":"tuple"}],"name":"CollNFT","type":"tuple[]"},{"name":"IdColl","type":"uint128"}],"name":"arr","type":"tuple[]"}
+			]
+		},
+		{
+			"name": "GetAllCollNFT",
+			"inputs": [
+			],
+			"outputs": [
+				{"components":[{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creator","type":"tuple"},{"components":[{"name":"IdColl","type":"uint128"},{"name":"idNFT","type":"uint128"},{"name":"addrNFT","type":"address"},{"name":"PathNFT","type":"string"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Owner","type":"tuple"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creater","type":"tuple"},{"name":"description","type":"string"},{"name":"pay_able","type":"bool"},{"name":"cost","type":"uint128"},{"name":"IsOriginal","type":"bool"},{"components":[{"name":"ColorSum","type":"uint128"},{"name":"deltaColor","type":"uint128"},{"name":"decomposition","type":"string"}],"name":"det","type":"tuple"}],"name":"CollNFT","type":"tuple[]"},{"name":"IdColl","type":"uint128"}],"name":"arr","type":"tuple[]"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"lastID","type":"uint128"},
+		{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"clientDB","type":"map(address,tuple)"},
+		{"components":[{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creator","type":"tuple"},{"components":[{"name":"IdColl","type":"uint128"},{"name":"idNFT","type":"uint128"},{"name":"addrNFT","type":"address"},{"name":"PathNFT","type":"string"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Owner","type":"tuple"},{"components":[{"name":"OwnAddrWallet","type":"address"},{"name":"bal","type":"uint128"},{"name":"LikesNFTbyID","type":"string"}],"name":"Creater","type":"tuple"},{"name":"description","type":"string"},{"name":"pay_able","type":"bool"},{"name":"cost","type":"uint128"},{"name":"IsOriginal","type":"bool"},{"components":[{"name":"ColorSum","type":"uint128"},{"name":"deltaColor","type":"uint128"},{"name":"decomposition","type":"string"}],"name":"det","type":"tuple"}],"name":"CollNFT","type":"tuple[]"},{"name":"IdColl","type":"uint128"}],"name":"CollectionNFT","type":"map(uint128,tuple)"}
+	]
+}

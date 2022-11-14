@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "";
+}
+@model ListClientsMessagesModel
+
+@{      
+    string combineS = "";
+    if(Model!=null)
+        if(Model.addressArray!=null)
+    foreach(var s in Model.addressArray)
+    combineS += s+"\\";
+}
+@combineS

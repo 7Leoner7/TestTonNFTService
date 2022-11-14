@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Коллекции";
+}
+@model IndexViewModel
+@using TonSdk
+
+<div id="auth_block" align="center" style="display: block; position: fixed; z-index: 9999; background-color: rgba(240, 240, 240, 0.8); width: 100%; height: 100%; justify-content:center; align-items:center; display: flex;"> </div>
+<script src="../js/auth.js"></script>
+<div id="zoom" style="display: none; position: fixed; z-index: 100; width: 100%; height: 100%;">
+    <table style="border-style: solid; border-color: black; background-color: rgba(10, 10, 10, 0.6); width: 100%; height: 100%;">
+        <tr>
+            <td id="zoomImage" align="center"> </td>
+            <td align="center">
+                <table>
+                    <tr>
+                        <td>
+                            <button class="buttonscript button" id="report">
+                                Report
+                            </button>
+                            <div style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">Стоимость: <span id="cost"></span> WCOIN</div>
+                            <button class="buttonscript button" id="buy">
+                                Купить
+                            </button>
+                            <div style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">Владелец: <u><span id="owner" style="word-break:break-all"></span></u></div>
+                            <div style="color: #FFFFFF; font-size: 20px; font-family: 'Consolas';">Создатель: <u><span id="author" style="word-break:break-all"></span></u></div>
+                            <button class="buttonscript button" id="authorsCollects">
+                                Страница коллекций создателя
+                            </button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<section>
+    <table align="center" style="border-style: solid; border-color: black; background-color: rgba(10, 10, 10, 0.6); width: 75%;">
+        @if (Model.ListOfNFT != null)
+        {
+            @for (int i = 0; i < Model.ListOfNFT.Count / 4 + (Model.ListOfNFT.Count % 4 != 0 ? 1 : 0); i++)
+            {
+                <tr>
+                    @{
+                        for (int j = i * 4; (j < Model.ListOfNFT.Count) && ((j % 4 != 0) || (j - i * 4 == 0)); j++)
+                        {
+                            string s = new { cost = Model.ListOfNFT[j].cost, author = Model.ListOfNFT[j].Creater, IdColl = Model.ListOfNFT[j].IdColl, idNFT = Model.ListOfNFT[j].idNFT, owner = Model.ListOfNFT[j].Owner }.ToJson().ToString();
+                            <td align="center" style="background: rgba(10, 10, 10, 0.5); border-style: groove; border-color: rgba(255, 255, 255, 0.5); width: 250px; height: 250px;">
+                                <img alt="@s" id="point" src="@Model.ListOfNFT[j].PathNFT" style="width: inherit; height: inherit;" draggable="false" />
+
+                            </td>
+                        }
+                    }
+                </tr>
+            }
+        }
+    </table>
+</section>
+@{
+    if (Model.number % 64 == 0)
+    {
+        ulong num = Model.number / 64;
+        <div style="justify-content:center; display:flex">
+            <div class="triangle-left" style="display:inline-block" id="prev" accesskey="@num"></div>
+            <div class="triangle-right" style="display:inline-block" id="next" accesskey="@num"></div>
+        </div>
+    }
+}
+
+<script src="../js/zoom.js"></script>

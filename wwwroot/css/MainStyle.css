@@ -1,0 +1,211 @@
+﻿html, body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow-x: auto;
+    background-image: url(../images/Fon.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    hyphens: auto;
+}
+
+header {
+    height: 60px;
+    width: 100%;
+    z-index: 10;
+    background-image: url(../images/shapochka.png);
+    background-color: rgba(255, 255, 255, 0.5);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+body header table {
+    padding: 1.5%;
+}
+
+.msg {
+    background-color: #FFFFFF;
+    width: fit-content;
+    word-break: break-all;
+}
+
+header td {
+    display: inline-block;
+}
+
+header a:before, header a:after {
+    content: "";
+    position: absolute;
+    height: 5%;
+    right: 50.01%;
+    bottom: 0%;
+    left: 50.01%;
+    background-color: white;
+    transition: 0.25s;
+}
+
+header a:hover:before, header .current:before {
+    left: 0;
+}
+
+header a:hover:after, header .current:after {
+    right: 0;
+}
+
+header a:hover:before, header .current:before {
+    left: 0;
+}
+
+header a:hover:after, header .current:after {
+    right: 0;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    white-space: normal;
+    line-height: 200%;
+    position: relative;
+}
+
+#point {
+    cursor: pointer;
+}
+
+.buttonscript {
+    width: 200px;
+    height: 64px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+    .button:hover {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+.buttonPA {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 15px;
+    margin: 0 15px 15px 0;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #fff;
+    background-color: #04e739;
+    position: relative;
+    overflow: hidden;
+    vertical-align: top;
+    cursor: pointer;
+    user-select: none;
+    appearance: none;
+    touch-action: manipulation;
+    z-index: 1;
+}
+
+    .buttonPA span {
+        position: absolute;
+        background: #fff;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        pointer-events: none;
+        animation: buttonPA_ripples 0.6s linear infinite;
+    }
+
+@keyframes buttonPA_ripples {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 0.5;
+    }
+
+    100% {
+        width: 1000px;
+        height: 1000px;
+        opacity: 0;
+    }
+}
+
+.buttonPA:hover {
+    box-shadow: 0 1px 2px 0 rgb(3 215 31 / 45%), 0 1px 3px 1px rgb(8 194 45 / 30%);
+    background-color: #01651c;
+}
+
+.buttonPA:active {
+    box-shadow: 0 1px 2px 0 rgba(3, 215, 31, 0.45), 0 2px 6px 2px rgba(8, 194, 45, 0.3);
+    background-color: #01651c !important;
+}
+
+.buttonPA:focus-visible {
+    box-shadow: 0 0 0 3px rgb(234, 243, 248);
+}
+
+.buttonPA:disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.triangle-left, .triangle-right, .triangle-top, .triangle-bottom {
+    width: 0;
+    height: 0;
+    margin: 30px auto;
+    cursor: pointer;
+}
+
+.triangle-left, .triangle-right {
+    border-top: 18px solid transparent;
+    border-bottom: 18px solid transparent;
+}
+
+.triangle-top, .triangle-bottom {
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+}
+
+.triangle-right {
+    border-left: 30px solid whitesmoke;
+}
+
+.triangle-left {
+    border-right: 30px solid whitesmoke;
+}
+
+.triangle-top {
+    border-bottom: 30px solid whitesmoke;
+}
+
+.triangle-bottom {
+    border-top: 30px solid whitesmoke;
+}
+
+ul {
+    padding-left: 40px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+ }
