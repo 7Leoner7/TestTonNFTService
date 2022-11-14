@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ou5yCodPhkCYG/2Kv6SpI3hfvTZI0VLa2N/3KbHlrWQSh/T/+D7/x+4AUim3Vy7rwNYslTjPfC75xV7TpPACMQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Leoner\\source\\repos\\AntiPlagueImg\\AntiPlagueImg.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Leoner\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Leoner\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

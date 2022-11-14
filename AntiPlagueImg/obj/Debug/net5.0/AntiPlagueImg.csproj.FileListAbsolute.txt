@@ -1,0 +1,12 @@
+C:\Users\Leoner\source\repos\AntiPlagueImg\bin\Debug\net5.0\AntiPlagueImg.deps.json
+C:\Users\Leoner\source\repos\AntiPlagueImg\bin\Debug\net5.0\AntiPlagueImg.dll
+C:\Users\Leoner\source\repos\AntiPlagueImg\bin\Debug\net5.0\ref\AntiPlagueImg.dll
+C:\Users\Leoner\source\repos\AntiPlagueImg\bin\Debug\net5.0\AntiPlagueImg.pdb
+C:\Users\Leoner\source\repos\AntiPlagueImg\obj\Debug\net5.0\AntiPlagueImg.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Leoner\source\repos\AntiPlagueImg\obj\Debug\net5.0\AntiPlagueImg.AssemblyInfoInputs.cache
+C:\Users\Leoner\source\repos\AntiPlagueImg\obj\Debug\net5.0\AntiPlagueImg.AssemblyInfo.cs
+C:\Users\Leoner\source\repos\AntiPlagueImg\obj\Debug\net5.0\AntiPlagueImg.csproj.CoreCompileInputs.cache
+C:\Users\Leoner\source\repos\AntiPlagueImg\obj\Debug\net5.0\AntiPlagueImg.dll
+C:\Users\Leoner\source\repos\AntiPlagueImg\obj\Debug\net5.0\ref\AntiPlagueImg.dll
+C:\Users\Leoner\source\repos\AntiPlagueImg\obj\Debug\net5.0\AntiPlagueImg.pdb
+C:\Users\Leoner\source\repos\AntiPlagueImg\obj\Debug\net5.0\AntiPlagueImg.csproj.AssemblyReference.cache
